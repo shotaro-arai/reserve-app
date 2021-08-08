@@ -1,1 +1,3 @@
-test
+<%= month_calendar events: @reservations do |date, reservations| %>
+    <%= date.day %>
+<% end %>
