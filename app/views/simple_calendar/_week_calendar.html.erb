@@ -7,6 +7,7 @@
       <span class="calendar-title"><%= t('simple_calendar.week', default: 'Week') %> <%= calendar.week_number %> - <%= calendar.end_week %></span>
     <% end %>
     <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %>
+    <% reservations = Reservation.reservations_after_three_month %>
   </div>
 
   <table class="table table-striped">
@@ -40,6 +41,11 @@
             <td><%= time %></td>
             <% week.each do |day| %>
               <td>
+                <% if check_reservation(reservations, day, time) %>
+                  <%= '×' %>
+                <% else %>
+                  <%= '○' %>
+                <% end %>
               </td>
             <% end %>
           </tr>
