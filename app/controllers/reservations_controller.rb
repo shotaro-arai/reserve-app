@@ -9,10 +9,20 @@ class ReservationsController < ApplicationController
     @day = params[:day]
     @time = params[:time]
     @start_time = DateTime.parse(@day + " " + @time + " " + "JST")
-    binding.pry
   end
 
   def create
+    @reservation = Reservation.new(reservation_params)
+    if @reservation.save
+      redirect_to reservations_path @reservation.id
+    else
+      render :new
+    end
+  end
+
+  private
+  def reservation_params
+    params.require(:reservation).permit(:day, :time, :start_time)
   end
   
 end
