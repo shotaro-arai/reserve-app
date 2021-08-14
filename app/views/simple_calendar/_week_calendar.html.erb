@@ -44,7 +44,10 @@
                 <% if check_reservation(reservations, day, time) %>
                   <%= '×' %>
                 <% else %>
-                  <%= '○' %>
+                  <!-- 予約がない場合にdayとtimeをパラメーターに渡し、登録フォームへ移動する記述 -->
+                  <%= link_to new_reservation_path(day: day, time: time) do %>
+                    <%= '○' %>
+                  <%end%>
                 <% end %>
               </td>
             <% end %>
