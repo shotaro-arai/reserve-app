@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_08_16_052443) do
     t.string "time", null: false
     t.datetime "start_time", null: false
     t.string "name"
-    t.integer "tel"
+    t.string "tel"
   end
 
 end
