@@ -16,7 +16,12 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to reservations_path @reservation.id
     else
-      render :new
+      @day = @reservation.day
+      @time = @reservation.time
+      @start_time = @reservation.start_time
+      @name = @reservation.name
+      @tel = @reservation.tel
+      render "new"
     end
   end
 
