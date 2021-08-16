@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_07_115441) do
+ActiveRecord::Schema.define(version: 2021_08_16_052443) do
 
   create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2021_08_07_115441) do
     t.date "day", null: false
     t.string "time", null: false
     t.datetime "start_time", null: false
+    t.string "name"
+    t.integer "tel"
   end
 
 end
