@@ -1,13 +1,15 @@
 class ReservationsController < ApplicationController
+  before_action :redirect_root, only: :new
 
   def index
-    @reservations = Reservation.where("day >= ?", Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
     @user = User.find(current_user.id)
+    @reservations = Reservation.where("day >= ?", Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
   end
 
   def new
     @user = User.find(current_user.id)
     @reservation = Reservation.new
+
     @day = params[:day]
     @time = params[:time]
     @start_time = DateTime.parse(@day + " " + @time + " " + "JST")
@@ -32,4 +34,9 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:day, :time, :start_time, :name, :tel)
   end
   
+  def redirect_root
+    if params[:day]==nil || params[:time]==nil
+      redirect_to root_path
+    end
+  end
 end
