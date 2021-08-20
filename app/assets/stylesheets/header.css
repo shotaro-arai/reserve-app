@@ -6,7 +6,8 @@
 .sign-up, 
 .sign-in,
 .link-to-top,
-.link-to-reservation{
+.link-to-reservation,
+.sign-out{
   text-decoration: none;
   color: black;
   margin-right: 50px;
@@ -15,6 +16,7 @@
 .sign-up:hover, 
 .sign-in:hover,
 .link-to-top:hover,
-.link-to-reservation:hover{
+.link-to-reservation:hover,
+.sign-out:hover{
   color: blue;
 }

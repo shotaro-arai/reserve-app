@@ -1,6 +1,7 @@
 <div class=header>
   <% if user_signed_in? %>
     <p><%= @user.name %> 様 いらっしゃいませ</p>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sign-out" %>
   <% else%>
     <%=link_to "ユーザー登録して予約", new_user_registration_path, class: "sign-up" %>
     <%=link_to "ログインして予約", new_user_session_path, class: "sign-in" %>
