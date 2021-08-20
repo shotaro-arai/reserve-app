@@ -2,12 +2,12 @@ class ReservationsController < ApplicationController
   before_action :redirect_root, only: :new
 
   def index
-    @user = User.find(current_user.id)
+    user_info
     @reservations = Reservation.where("day >= ?", Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
   end
 
   def new
-    @user = User.find(current_user.id)
+    user_info
     @reservation = Reservation.new
 
     @day = params[:day]
@@ -37,6 +37,12 @@ class ReservationsController < ApplicationController
   def redirect_root
     if params[:day]==nil || params[:time]==nil
       redirect_to root_path
+    end
+  end
+
+  def user_info
+    if user_signed_in?
+      @user = User.find(current_user.id)
     end
   end
 end
