@@ -2,9 +2,11 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.where("day >= ?", Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
+    @user = User.find(current_user.id)
   end
 
   def new
+    @user = User.find(current_user.id)
     @reservation = Reservation.new
     @day = params[:day]
     @time = params[:time]

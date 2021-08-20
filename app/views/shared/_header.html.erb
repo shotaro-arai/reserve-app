@@ -1,6 +1,6 @@
 <div class=header>
   <% if user_signed_in? %>
-    <p><% @hoge %>様 いらっしゃいませ</p>
+    <p><%= @user.name %> 様 いらっしゃいませ</p>
   <% else%>
     <%=link_to "ユーザー登録して予約", new_user_registration_path, class: "sign-up" %>
     <%=link_to "ログインして予約", new_user_session_path, class: "sign-in" %>

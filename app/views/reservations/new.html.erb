@@ -19,11 +19,11 @@
       </div>
       <div class="name form-group">
         <%= form.label :name, '名前' %>
-        <%= form.text_field :name, class: 'form-control', value: @name, readonly: false %>
+        <%= form.text_field :name, class: 'form-control', value: @user.name, readonly: false %>
       </div>
       <div class="tel form-group">
         <%= form.label :tel, '電話番号' %>
-        <%= form.text_field :tel, class: 'form-control', value: @tel, readonly: false %>
+        <%= form.text_field :tel, class: 'form-control', value: @user.tel, readonly: false %>
       </div>
       <%# form.hidden_field :user_id, value: current_user.id %>
       <%= form.hidden_field :start_time, value: @start_time %>
