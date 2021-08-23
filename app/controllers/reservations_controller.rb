@@ -23,8 +23,7 @@ class ReservationsController < ApplicationController
       @day = @reservation.day
       @time = @reservation.time
       @start_time = @reservation.start_time
-      @name = @reservation.name
-      @tel = @reservation.tel
+      user_info
       render "new"
     end
   end
