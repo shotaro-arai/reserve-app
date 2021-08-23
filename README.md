@@ -1,24 +1,54 @@
-# README
+# Reserve-App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://reserve-app0821.herokuapp.com/
 
-Things you may want to cover:
+<br>
 
-* Ruby version
+[![Image from Gyazo](https://i.gyazo.com/4d5f6e716fc3c21b6ff4ec29c8de21c1.png)](https://gyazo.com/4d5f6e716fc3c21b6ff4ec29c8de21c1)
 
-* System dependencies
+<br>
 
-* Configuration
+## What?
+railsのgem『シンプルカレンダー』を使用した、日時予約表をつくってみた。
+<br>
+<br>
 
-* Database creation
+## Why?
+ユーザーが予約できる日時を、あらかじめ確認できるように。
+<br>
+<br>
 
-* Database initialization
+## 機能
+- 1時間毎の予約の可否を○X表示
+- かつ１週間分の表示
+- ユーザー登録しなくても予約可能
+- ユーザー登録すると、楽！
 
-* How to run the test suite
+<br>
 
-* Services (job queues, cache servers, search engines, etc.)
+*ユーザー未登録の場合*
 
-* Deployment instructions
+[![Image from Gyazo](https://i.gyazo.com/cbe81fd5e44f150aabfdf72c50d36045.gif)](https://gyazo.com/cbe81fd5e44f150aabfdf72c50d36045)
 
-* ...
+<br>
+
+*ユーザー登録済の場合*
+
+[![Image from Gyazo](https://i.gyazo.com/8e090e4cde1f57e8b85e450263d29920.gif)](https://gyazo.com/8e090e4cde1f57e8b85e450263d29920)
+
+
+### 〜今後、行いたいこと〜
+
+管理者用アプリとユーザーアプリを切り分けて、連動させる
+
+<br>
+<br>
+Rails 6.0.4<br>
+simple_calendar (2.4.2)
+
+<br>
+<br>
+
+### 参考記事
+
+https://qiita.com/sssssatou/items/2e6606e3ddf9b246a0fb
